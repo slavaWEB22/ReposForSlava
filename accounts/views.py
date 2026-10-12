@@ -2,6 +2,9 @@ from django.shortcuts import render,redirect
 from django.urls import reverse
 from django.contrib.auth.models import User
 from django.contrib.auth import login,logout,authenticate
+from django.urls import reverse_lazy
+from django.contrib.auth.views import PasswordResetView, PasswordResetConfirmView
+
 
 # Create your views here.
 def registerView(request):
@@ -44,3 +47,4 @@ def loginView(request):
 def logoutView(request):
     logout(request)
     return redirect(reverse("home"))
+

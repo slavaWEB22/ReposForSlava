@@ -5,9 +5,10 @@
     {% for item in prod %}
         <a href="{% url "pageCard" item.id %}">
             <div class="cardProd">
-                <div><img src="{{ item.photo.url }}" width="213px" height="284px" alt=""></div>
+                <div id="photoProdG"><img src="{{ item.photo.url }}" width="213px" height="284px" alt=""></div>
                 <div>{{ item.price }}</div>
-                <div> {{ item.name }} </div>
+                <div> {{ item.name }} - {{ item.article }} </div>
+                <div><a href="{% url "add_cart" item.id %}">Добавить в корзину</a></div>
             </div>
         </a>
     {% endfor %}

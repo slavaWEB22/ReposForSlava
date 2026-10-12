@@ -13,6 +13,12 @@ body{
     background-color: rgb(245 247 250);
 }
 
+body > form{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
 .base-container{
     height: 100vh;
 }
@@ -20,6 +26,16 @@ body{
 header{
     container-type: inline-size;
     container-name: headerContainer;
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(128 212 251);
+    padding: 5px;
+}
+nav{
+    flex: 1;
+    display: flex;
+    justify-content: space-evenly;
 }
 
 @container headerContainer (max-width: 400px){

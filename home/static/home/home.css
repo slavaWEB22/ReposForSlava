@@ -6,6 +6,10 @@
     gap: 20px;
     margin: 30px 2% 0px 2%;
 }
+#photoProdG{
+    display: flex;
+    justify-content: center ;
+}
 .cardProd{
     padding: 11px;
     background-color: white;

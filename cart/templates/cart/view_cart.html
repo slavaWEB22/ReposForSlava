@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block main %}
+
+<div id="cardContainerCart">
+    {% for item in cartLst %}
+        
+            <div class="cardProdCart">
+                <div class="imageElemFlex">
+                    <a href="{% url "pageCard" item.prod.id %}">
+                        <img src="{{ item.prod.photo.url }}" width="213px" height="284px" alt="">
+                    </a>
+                </div>
+                <div class="textElemFlex">
+                    <div class="textElemName">
+                        <a href="{% url "pageCard" item.prod.id %}">
+                            <div> {{ item.prod.name }} - {{ item.prod.article }}</div>  
+                        </a>
+                    </div>
+                    <div class="textElemPrice">
+                        <div>{{ item.prod.price }}руб.</div>
+                    </div>
+                    <div class="textElemCount">
+                        <a href="{% url "minus_cart" item.prod.id %}">-</a>{{ item.count }}<a href="{% url "add_cart" item.prod.id%}">+</a>
+                        {% for itemMes in listMessage %}
+                            <div>{{ itemMes }}</div>
+                        {% endfor %}
+                        <a href="{% url "buy_one_cart" item.prod.id %}">Купить</a>
+                    </div>
+                </div>
+            </div>
+    {% endfor %}
+    <a id="buy_all" href="{% url "buy_all_cart"%}">Купить всё</button>
+</div>
+{% endblock main %}
