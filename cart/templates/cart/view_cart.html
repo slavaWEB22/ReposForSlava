@@ -21,11 +21,11 @@
                         <div>{{ item.prod.price }}руб.</div>
                     </div>
                     <div class="textElemCount">
-                        <a href="{% url "minus_cart" item.prod.id %}">-</a>{{ item.count }}<a href="{% url "add_cart" item.prod.id%}">+</a>
+                        <div class="gl"><a href="{% url "minus_cart" item.prod.id %}">-</a>{{ item.count }}<a href="{% url "add_cart" item.prod.id%}">+</a></div>
+                        <div class="gl"><a href="{% url "buy_one_cart" item.prod.id %}">Купить</a></div>
                         {% for itemMes in listMessage %}
-                            <div>{{ itemMes }}</div>
+                            <div class="glMess">{{ itemMes }}</div>
                         {% endfor %}
-                        <a href="{% url "buy_one_cart" item.prod.id %}">Купить</a>
                     </div>
                 </div>
             </div>

@@ -16,7 +16,6 @@
     {% include "logout.html" %}
     <div class="base-container">
         <header>
-            <h1>yes</h1>
             {% block header %}
                     <nav>
                             <button id="btnHome"><a href="/">MTZ</a></button>
@@ -33,6 +32,10 @@
                         <input type="search" class="inputSearchElements" name="search" id="inputSearch" placeholder="Искать на мтз">
                         <button type="submit" class="inputSearchElements" id="submitSearch"><img src='static\icons\iconSubmitSearch.png' class='bottomPanelIcon'/></button>
                     </form>
+                    
+                    {% if request.user.is_staff %}
+                        <a href="{% url "staff_view" %}">admin panel</a>
+                    {% endif %}
             {% endblock header %}
         </header>
         <main>

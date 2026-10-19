@@ -10,5 +10,6 @@ urlpatterns = [
     path('', include('home.urls')),
     path('accountsL/',include('accounts.urls')),
     path('card/',include('pageCard.urls'),),
-    path("cart/",include("cart.urls"))
+    path("cart/",include("cart.urls")),
+    path("staff/",include("staffPage.urls"))
     ] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
