@@ -6,11 +6,9 @@
     <title>Document</title>
 </head>
 <body>
-    <div>
-    Список закупок:
-    {% for item in prod %}
-        <div>{{item.article}} - {{ item.count }}</div> 
-    {% endfor %}
-    </div>
+
+    <a href="{% url "staff_zakupki" %}">Закупки</a>
+    <a href="{% url "staff_editor" %}">Редактор бд</a>
+
 </body>
 </html>

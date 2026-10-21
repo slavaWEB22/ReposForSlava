@@ -2,9 +2,6 @@
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    container-type: inline-size;
-    container-name: cardContainerCart;
-    justify-content: center;
 }
 .imageElemFlex > a > img{
     border-radius: 17px;
@@ -18,7 +15,6 @@
     border-radius: 17px;
     padding: 2%;
 }
-
 .textElemFlex{
     flex: 1 ;
     display: grid;
@@ -47,29 +43,4 @@
     width: 100%;
     height: 50px;
     margin: 0 10% 0 10%;
-}
-
-.textElemCount > .gl{
-    background-color: rgb(247, 247, 247);
-}
-
-.textElemCount > .glMess{
-    color: red;
-}
-
-@container cardContainerCart (max-width: 600px){
-    .cardProdCart{
-        flex-direction: column;
-        justify-content: center;
-    }
-    .cardProdCart > .textElemFlex{
-        grid-template-areas: 
-                             "price" 
-                             "name"
-                             "count";
-        gap: 5px;
-    }
-    .textElemPrice{
-        font-size: 30px;
-    }
 }

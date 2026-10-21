@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        Редактор:
+        <hr>
+            {% for item in prod %}
+            <div>
+                <div>
+                    <h1>Старые значения:</h1>
+                         <div> Име: {{ item.name }}</div>
+                         <div> Артикул: {{ item.article }}</div>
+                         <div> Цена: {{ item.price }}</div>
+                         <div> Количество: {{ item.count }}</div>
+                </div>
+                <br>
+                <div>
+                    <h1>Установка новых значений:</h1>
+                        <form action="{% url "staff_editor_compl" item.id %}" method="post">
+                            {% csrf_token %}
+                            <div>Новое име: <input type="text" name="name"></div>
+                            <div>Новый артикул: <input type="text" name="article"></div>
+                            <div>Новая цена: <input type="number" name="price"></div>
+                            <div>Количество: <input type="text" name="count"></div>
+                            <input type="submit" value="Загрузить новые значения">
+                        </form>
+                </div>
+            </div>
+            <hr>
+            {% endfor %}
+    </div>
+</body>
+</html>

@@ -14,12 +14,9 @@ def view_cart(request):
             i.save()
             if "Количество товара уменьшелось" not in listMessage:
                 listMessage.append("Количество товара уменьшелось")
-        if i.prod.count <= 3:
+        if i.prod.count <= 10:
             if "Осталось мало товара" not in listMessage:
                 listMessage.append("Осталось мало товара")
-        else:
-            if "Осталось мало товара" in listMessage:
-                listMessage.remove("Осталось мало товара")
     return render(request,"cart/view_cart.html",{"cartLst":cart,"listMessage":listMessage})
 
 def add_cart(request,pk):
